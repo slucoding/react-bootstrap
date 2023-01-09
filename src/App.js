@@ -1,9 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import React from 'react';
+import NaviBar from './Components/Navibar';
 
 function App() {
   return (
-    <Button variant="primary">Web Dev Blog</Button>
+    <>
+      <NaviBar />
+    </>
   );
 }
 
