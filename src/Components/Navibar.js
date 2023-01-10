@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function NaviBar() {
     return (
@@ -10,9 +11,9 @@ export default function NaviBar() {
                 <Navbar.Collapse id='responsive-navbar-nav'
                     className='justify-content-between'>
                     <Nav className='m-2'>
-                        <Nav.Link>Home</Nav.Link>
-                        <Nav.Link>Users</Nav.Link>
-                        <Nav.Link>About</Nav.Link>
+                        <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                        <Nav.Link><Link to="/about">About</Link></Nav.Link>
+                        <Nav.Link><Link to="/users">Users</Link></Nav.Link>
                     </Nav>
                     <Nav >
                         <Button variant='primary' className='m-2'>Log In</Button>
