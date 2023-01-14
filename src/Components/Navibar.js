@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Nav, Button, Container, Modal, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -9,11 +9,16 @@ a, .navbar-brand, .navbar-nav, .nav-link {
     &:hover {
       color: white;
     }
-
   }
 `
 
 export default function NaviBar() {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);    
+
     return (
         <>
             <Styles>
@@ -29,13 +34,34 @@ export default function NaviBar() {
                                 <Nav.Link><Link to="/users">Users</Link></Nav.Link>
                             </Nav>
                             <Nav >
-                                <Button variant='primary' className='m-2'>Log In</Button>
+                                <Button variant='primary' className='m-2' onClick={handleShow}>Log In</Button>
                                 <Button variant='primary' className='m-2'>Sign Out</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
             </Styles>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Log In</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group controlId='fromBasicEmail'>
+                            <Form.Label>Email adress</Form.Label>
+                            <Form.Control type='email' placeholder='Enter email' />
+                            <Form.Text>We'll never share your email with anyone else</Form.Text>
+                        </Form.Group>
+                        <Form.Group controlId='fromBasicPassword'>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type='password' placeholder='Enter password' />
+                        </Form.Group>
+                        <Form.Group controlId='fromBasicCheckbox'>
+                            <Form.Check type='checkbox' label='Remember me' />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+            </Modal>
         </>
     );
 }
