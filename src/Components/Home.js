@@ -48,6 +48,24 @@ const Home = () => (
                 </Col>
             </Row>
         </Container>
+        <Container style={{ marginBottom: '30px'}}>
+            <Row>
+                <Col md={7}>
+                    <img src={one} height={400} alt="Web Develor Blog" />
+                </Col>
+                <Col md={5}>
+                <h1>Web Develop Blog</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dolor quibusdam nobis labore molestias atque accusamus officia quis, non ratione. 
+                    Libero amet ipsa adipisci iste odio laudantium debitis corrupti autem alias!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dolor quibusdam nobis labore molestias atque accusamus officia quis, non ratione. 
+                    Libero amet ipsa adipisci iste odio laudantium debitis corrupti autem alias!
+                </p>
+                </Col>
+            </Row>
+        </Container>
     </>
 )
 
